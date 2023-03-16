@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+
+.nav-container {
+	background-color: cornsilk;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: 'Hi Melody', cursive;
+	font-size: medium;
+}
+
+button.nav-contect {
+	background-color: transparent;
+	background-color: antiquewhite;
+	width: 100px;
+	height: 40px;
+	border: 0;
+	cursor: pointer;
+	font-family: 'Hi Melody', cursive;
+	font-size: xx-large;
+}
