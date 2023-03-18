@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+html {
+	/* font-family: 'Hanna', fantasy; */
+	font-family: BMJUA;
+}
+
+nav {
+	background-color:cornsilk;
+}
+
+body {
+	background-color:beige;
+}
+
+.nav-title {
+	font-size: 30px;
+}
+
+#category {
+	font-size: 25px;
+}
+
+.nav-container {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+	padding: 0 30px;
+}
+
+@media only all and (min-width: 1024px) {
+	.inner {
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+}
+
+button.nav-contect {
+	background-color: transparent;
+	width: 100px;
+	height: 40px;
+	border: 0;
+	cursor: pointer;
+	font-family: 'Hanna', fantasy;
+	font-size: 25px;
+}
