@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="media_query.css" >
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=88iwnhrdds"></script>
 </head>
 <body>
 	<nav>
@@ -20,10 +21,29 @@
 	<main>
 		<section id="category"\>
 			<h2>지역을 선택해 주세요</h2>
+			<div class="buttons">
+				<button class="city_buttons">신림</button>
+				<button class="city_buttons">홍대</button>
+				<button class="city_buttons">강남</button>
+				<button class="city_buttons">연남</button>
+			</div>
+			<div class="buttons">
+				<button class="city_buttons">잠실</button>
+				<button class="city_buttons">합정</button>
+				<button class="city_buttons">가로수길</button>
+				<button class="city_buttons">서울대입구</button>
+			</div>
 			<!-- 카테고리 -->
 		</section>
-		<div id="map">
-			<!-- 카카오지도 -->
+		<div id="map" style="width:100%;height:400px;">
+			<!--NAVER MAP API-->
+			<script>
+				var mapOptions = {
+					center: new naver.maps.LatLng(37.484269, 126.929676),
+					zoom: 14
+				};
+				var map = new naver.maps.Map('map', mapOptions);
+			</script>
 		</div>
 	</main>
 </body>

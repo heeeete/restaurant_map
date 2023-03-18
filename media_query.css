@@ -9,8 +9,7 @@
 
 
 html {
-	/* font-family: 'Hanna', fantasy; */
-	font-family: BMJUA;
+	font-family: BMJUA, fantasy;
 }
 
 nav {
@@ -19,6 +18,22 @@ nav {
 
 body {
 	background-color:beige;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	flex-wrap: wrap;
+}
+
+.city_buttons {
+	padding: 10px;
+	border: 0;
+	background-color: transparent;
+	font-family: BMJUA, fantasy;
+	cursor: pointer;
+	font-size: 18px;
 }
 
 .nav-title {
@@ -50,6 +65,6 @@ button.nav-contect {
 	height: 40px;
 	border: 0;
 	cursor: pointer;
-	font-family: 'Hanna', fantasy;
+	font-family: BMJUA, fantasy;
 	font-size: 25px;
 }
