@@ -7,6 +7,11 @@
     font-style: normal;
 }
 
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+  }
 
 html {
 	font-family: BMJUA, fantasy;
@@ -19,45 +24,47 @@ nav {
 body {
 	background-color:beige;
 }
-
-.buttons {
-	display: flex;
-	justify-content: center;
-	align-items:center;
-	flex-wrap: wrap;
+.category_title {
+	padding: 10px;
 }
 
 .city_buttons {
-	padding: 10px;
-	border: 0;
-	background-color: transparent;
+	background: none;
+	border: none;
 	font-family: BMJUA, fantasy;
 	cursor: pointer;
 	font-size: 18px;
+	width: 24.4%;
+	height: 3rem;
 }
+
+.inner {
+	padding: 0 10rem;
+}
+/* naver_map */
+#map {
+	flex-grow: 1;
+	top: 20px;
+}
+
+@media all and (min-width: 1024px) {
+	.inner {
+	  max-width: 1024px;
+	  margin: 0 auto;
+	}
+  }
 
 .nav-title {
 	font-size: 30px;
 }
 
-#category {
-	font-size: 25px;
-}
-
 .nav-container {
+	padding: 1rem;
 	display: flex;
-	justify-content: space-between;
 	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
-	padding: 0 30px;
-}
-
-@media only all and (min-width: 1024px) {
-	.inner {
-		max-width: 1024px;
-		margin: 0 auto;
-	}
-}
+  }
 
 button.nav-contect {
 	background-color: transparent;
