@@ -1,28 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap");
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 @font-face {
-    font-family: 'BMJUA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: "BMJUA";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+		format("woff");
+	font-weight: normal;
+	font-style: normal;
 }
 
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-  }
+}
 
 html {
 	font-family: BMJUA, fantasy;
 }
 
 nav {
-	background-color:cornsilk;
+	background-color: cornsilk;
 }
 
 body {
-	background-color:beige;
+	background-color: beige;
 }
 .category_title {
 	padding: 10px;
@@ -49,10 +50,10 @@ body {
 
 @media all and (min-width: 1024px) {
 	.inner {
-	  max-width: 1024px;
-	  margin: 0 auto;
+		max-width: 1024px;
+		margin: 0 auto;
 	}
-  }
+}
 
 .nav-title {
 	font-size: 30px;
@@ -64,7 +65,7 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-  }
+}
 
 button.nav-contect {
 	background-color: transparent;
