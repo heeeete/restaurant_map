@@ -6,10 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="media_query.css" />
-		<script
-			type="text/javascript"
-			src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=88iwnhrdds"
-		></script>
 	</head>
 	<body>
 		<nav>
@@ -39,16 +35,18 @@
 					</div>
 				</div>
 			</section>
-			<div id="map" class="inner" style="width: 100%; height: 500px">
+			<div id="map" class="inner" style="width: 100%; height: 1000px">
 				<!-- NAVER MAP API-->
-				<script>
-					var mapOptions = {
-						center: new naver.maps.LatLng(37.484269, 126.929676),
-						zoom: 14,
-					};
-					var map = new naver.maps.Map("map", mapOptions);
-				</script>
 			</div>
 		</main>
+		<script
+			type="text/javascript"
+			src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=88iwnhrdds"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=88iwnhrdds&submodules=geocoder"
+		></script>
+		<script src="NaverMap.js"></script>
 	</body>
 </html>
