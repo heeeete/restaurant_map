@@ -20,6 +20,7 @@ html {
 
 nav {
 	background-color: cornsilk;
+	min-width: 552px;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
 }
 .category_title {
 	padding: 10px;
+	white-space: nowrap;
 }
 
 .city_buttons {
@@ -47,16 +49,23 @@ body {
 	flex-grow: 1;
 	top: 20px;
 }
-
+/* 창 늘릴시 1024px 까지만 형태 늘어남 */
 @media all and (min-width: 1024px) {
 	.inner {
 		max-width: 1024px;
 		margin: 0 auto;
 	}
 }
-
+/* 창 줄일시 552px 까지만 형태 변경 그 이하로 줄일시 요소 고정 */
+@media all and (max-width: 1024px) {
+	.inner {
+		min-width: 552px;
+		margin: 0 auto;
+	}
+}
 .nav-title {
 	font-size: 30px;
+	white-space: nowrap;
 }
 
 .nav-container {
@@ -75,4 +84,11 @@ button.nav-contect {
 	cursor: pointer;
 	font-family: BMJUA, fantasy;
 	font-size: 25px;
+}
+
+.list_buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
 }
