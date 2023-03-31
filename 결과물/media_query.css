@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap");
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@font-face {
+	font-family: "BMJUA";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+		format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: BMJUA, fantasy;
+}
+
+nav {
+	background-color: cornsilk;
+	min-width: 552px;
+}
+
+body {
+	background-color: beige;
+}
+.category_title {
+	padding: 10px;
+	white-space: nowrap;
+}
+
+.city_buttons {
+	background: none;
+	border: none;
+	font-family: BMJUA, fantasy;
+	cursor: pointer;
+	font-size: 18px;
+	width: 24.4%;
+	height: 3rem;
+}
+
+.inner {
+	padding: 0 10rem;
+}
+/* naver_map */
+#map {
+	flex-grow: 1;
+	top: 20px;
+}
+/* 창 늘릴시 1024px 까지만 형태 늘어남 */
+@media all and (min-width: 1024px) {
+	.inner {
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+}
+/* 창 줄일시 552px 까지만 형태 변경 그 이하로 줄일시 요소 고정 */
+@media all and (max-width: 1024px) {
+	.inner {
+		min-width: 552px;
+		margin: 0 auto;
+	}
+}
+.nav-title {
+	font-size: 30px;
+	white-space: nowrap;
+}
+
+.nav-container {
+	padding: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+button.nav-contect {
+	background-color: transparent;
+	width: 100px;
+	height: 40px;
+	border: 0;
+	cursor: pointer;
+	font-family: BMJUA, fantasy;
+	font-size: 25px;
+}
+
+.list_buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
