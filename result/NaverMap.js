@@ -374,17 +374,6 @@ makeMarker().then(() => {
 			infoWindows[i].close(); // 지도상 아무곳을 클릭하면 infoWindow 닫기
 		}
 	});
-	var menu = new naver.maps.MapTypeControl({
-		style: naver.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-		position: naver.maps.Position.TOP_RIGHT,
-		mapTypes: [
-			naver.maps.MapTypeId.NORMAL,
-			naver.maps.MapTypeId.SATELLITE,
-			naver.maps.MapTypeId.HYBRID,
-		],
-	});
-
-	map.controls[naver.maps.Position.TOP_RIGHT].push(menu.getElement());
 });
 
 cityhandler();
