@@ -1,27 +1,60 @@
+@font-face {
+	font-family: "BMJUA";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+		format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	font-family: BMJUA, fantasy;
+}
+
 .nav-container {
 	position: relative;
 	height: 700px;
 }
 
-.salmonImg {
+.img_1 {
 	position: absolute;
 	top: 0%;
-	left: 76%;
+	left: 80%;
+	width: 300px;
 }
-.chickenImg {
+.img_2 {
 	position: absolute;
-	top: 4%;
+	width: 600px;
+	top: 0%;
 	left: 17%;
+	width: 300px;
 }
-.cafeImg {
-	position: absolute;
-	top: 15%;
-	left: 0%;
-}
-.steakImg {
+.img_3 {
 	position: absolute;
 	top: 30%;
-	left: 66%;
+	left: 0%;
+	width: 250px;
+}
+.img_4 {
+	position: absolute;
+	top: 40%;
+	left: 70%;
+	width: 200px;
+}
+
+.img_1,
+.img_2,
+.img_3,
+.img_4 {
+	transition: opacity 2s ease-in-out;
+}
+
+.img_box {
+	text-align: center;
+}
+
+.main-text {
+	font-size: 50px;
+	line-height: 700px;
 }
 
 @media all and (max-width: 1024px) {

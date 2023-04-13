@@ -15,43 +15,80 @@ function floatingObject(selector, delay, size) {
 		delay: random(0, delay), // 지연시간
 	});
 }
-floatingObject(".cafeImg", 1, 15);
-floatingObject(".chickenImg", 0.5, 15);
-floatingObject(".salmonImg", 1.5, 20);
-floatingObject(".steakImg", 1.5, 20);
+floatingObject(".img_1", 1, 15);
+floatingObject(".img_2", 0.5, 15);
+floatingObject(".img_3", 1.5, 20);
+floatingObject(".img_4", 1.5, 20);
+
+//이미지 변경
+// const images = [
+// 	"./home_img/chicken.png",
+// 	"./home_img/steak.png",
+// 	"./home_img/cafe.png",
+// 	"./home_img/salmon.png",
+// 	"./home_img/Hamburger.png",
+// 	"./home_img/pizza.png",
+// 	"./home_img/noodle.png",
+// 	"./home_img/noodle2.png",
+// 	"./home_img/porkcutlet.png",
+// ];
+
+// function shuffleArray(array) {
+// 	for (let i = array.length - 1; i > 0; i--) {
+// 		const j = Math.floor(Math.random() * (i + 1));
+// 		[array[i], array[j]] = [array[j], array[i]];
+// 	}
+// }
+
+// function changeImages() {
+// 	shuffleArray(images);
+
+// 	document.querySelector(".img_1").src = images[0];
+// 	document.querySelector(".img_2").src = images[1];
+// 	document.querySelector(".img_3").src = images[2];
+// 	document.querySelector(".img_4").src = images[3];
+// }
+
+// setInterval(changeImages, 2000);
 
 const images = [
 	"./home_img/chicken.png",
 	"./home_img/steak.png",
 	"./home_img/cafe.png",
 	"./home_img/salmon.png",
+	"./home_img/Hamburger.png",
+	"./home_img/pizza.png",
+	"./home_img/noodle.png",
+	"./home_img/noodle2.png",
+	"./home_img/porkcutlet.png",
 ];
 
-const imageSelectors = [".chickenImg", ".steakImg", ".cafeImg", ".salmonImg"];
-
-// function getRandomIndex(array) {
-// 	return Math.floor(Math.random() * array.length);
-// }
-
-let lastImageIndex;
-
-function getRandomIndex(array) {
-	let index;
-	do {
-		index = Math.floor(Math.random() * array.length);
-	} while (index === lastImageIndex);
-	lastImageIndex = index;
-	return index;
+function shuffleArray(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
 }
 
-function changeImage() {
-	const randomImageIndex = getRandomIndex(images);
-	const randomImage = images[randomImageIndex];
+function changeImage(selector, newSrc) {
+	const imageElement = document.querySelector(selector);
+	imageElement.style.opacity = 0;
 
-	const randomSelectorIndex = getRandomIndex(imageSelectors);
-	const randomSelector = imageSelectors[randomSelectorIndex];
-
-	document.querySelector(randomSelector).src = randomImage;
+	setTimeout(() => {
+		imageElement.src = newSrc;
+		imageElement.style.opacity = 1;
+	}, 1000);
 }
 
-setInterval(changeImage, 1000);
+function changeImages() {
+	shuffleArray(images);
+
+	changeImage(".img_1", images[0]);
+	changeImage(".img_2", images[1]);
+	changeImage(".img_3", images[2]);
+	changeImage(".img_4", images[3]);
+}
+
+setInterval(changeImages, 4000);
+
+gsap.from(".main-text", { opacity: 0, duration: 5 });
