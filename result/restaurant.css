@@ -29,6 +29,7 @@ body {
 .category_title {
 	padding: 10px;
 	white-space: nowrap;
+	margin-bottom: 20px;
 }
 
 .city_buttons {
@@ -84,6 +85,9 @@ button.nav-contect {
 	cursor: pointer;
 	font-family: BMJUA, fantasy;
 	font-size: 25px;
+	border: 2px solid rgb(255, 232, 149);
+	block-size: 50px;
+	border-radius: 10px;
 }
 
 .list_buttons {
@@ -91,4 +95,6 @@ button.nav-contect {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
+	border: 2px solid rgb(255, 232, 149);
+	border-radius: 20px;
 }

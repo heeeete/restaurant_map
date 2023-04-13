@@ -1,0 +1,32 @@
+.nav-container {
+	position: relative;
+	height: 700px;
+}
+
+.salmonImg {
+	position: absolute;
+	top: 0%;
+	left: 76%;
+}
+.chickenImg {
+	position: absolute;
+	top: 4%;
+	left: 17%;
+}
+.cafeImg {
+	position: absolute;
+	top: 15%;
+	left: 0%;
+}
+.steakImg {
+	position: absolute;
+	top: 30%;
+	left: 66%;
+}
+
+@media all and (max-width: 1024px) {
+	.nav-container {
+		min-width: 874px;
+		margin: 0 auto;
+	}
+}
