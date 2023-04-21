@@ -1,6 +1,15 @@
 const { add } = require("winston");
 const { pool } = require("../../config/database");
 
+exports.insertUsers = async function (connection, userID, password, nickname) {
+	const Query = `insert into Users (nickname, userID, password) values (?, ?, ?);`;
+	const Params = [nickname, userID, password];
+
+	const rows = await connection.Query(Query, Params);
+
+	return rows;
+};
+
 exports.deleteStudents = async function (connection, idx) {
 	const Query = `update Students set status = "D" where studentIdx = ?;`;
 	const params = [idx];
