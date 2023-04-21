@@ -109,7 +109,7 @@ textContainer.addEventListener("mouseout", function () {
 	});
 });
 textContainer.addEventListener("click", function () {
-	window.location.href = "/restaurant_map/restaurant.html";
+	window.location.href = "./restaurant_map/restaurant.html";
 });
 
 gsap.from("#barista", { x: 1000, y: 1000, opacity: 0, duration: 5 });
