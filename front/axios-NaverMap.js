@@ -6,7 +6,7 @@ async function getDataSet(city) {
 
 	const dataSet = await axios({
 		method: "get",
-		url: `http://localhost:3000/restaurants?city=${qs}`,
+		url: `http://3.35.16.77:3000/restaurants?city=${qs}`,
 		headers: {},
 		data: {},
 	});
