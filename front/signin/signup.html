@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="sign.css" />
+		<!-- <link rel="stylesheet" href="signup.css" /> -->
+	</head>
+	<body>
+		<nav>
+			<div class="inner">
+				<div class="nav-container">
+					<h1 class="nav-title"><a href="../index.html">맛집지도</a></h1>
+				</div>
+			</div>
+		</nav>
+
+		<main>
+			<div class="inner">
+				<div class="sign-container">
+					<h3>Register With Us</h3>
+					<div class="sign-form">
+						<div class="input-wrapper">
+							<label for="userID" class="float-label">ID</label>
+							<input type="text" placeholder="" id="userID" />
+						</div>
+						<div class="input-wrapper">
+							<label for="password" class="float-label">Enter password</label>
+							<input type="password" placeholder="" id="password" />
+						</div>
+						<div class="input-wrapper">
+							<label for="password2" class="float-label"
+								>Enter password check</label
+							>
+							<input type="password" placeholder="" id="password2" />
+						</div>
+						<div class="input-wrapper">
+							<label for="nickname" class="float-label">nickname</label>
+							<input type="text" placeholder="" id="nickname" />
+						</div>
+						<input type="button" value="Submit" id="signup" />
+						<!-- signup-container -->
+					</div>
+					<!-- sign-form -->
+				</div>
+				<!-- sign-container -->
+			</div>
+		</main>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+			integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="sign.js"></script>
+		<script src="signup.js"></script>
+	</body>
+</html>

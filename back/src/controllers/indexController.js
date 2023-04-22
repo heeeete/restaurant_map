@@ -6,6 +6,66 @@ const secret = require("../../config/secret");
 const indexDao = require("../dao/indexDao");
 const { add } = require("winston");
 
+//로그인 유지
+exports.readJwt = async function (req, res) {
+	const { userIdx, nickname } = req.verifiedToken;
+
+	return res.send({
+		result: { userIdx: userIdx, nickname: nickname },
+		code: 200,
+		message: "유효한 토큰입니다.",
+	});
+};
+
+//로그인
+exports.createJwt = async function (req, res) {
+	const { userID, password } = req.body;
+
+	if (!userID || !password) {
+		return res.send({
+			isSuccess: false,
+			code: 400,
+			message: "회원정보를 입력해주세요.",
+		});
+	}
+	try {
+		const connection = await pool.getConnection(async (conn) => conn);
+		try {
+			const [rows] = await indexDao.isVaildUsers(connection, userID, password);
+
+			if (rows.length < 1) {
+				return res.send({
+					isSuccess: false,
+					code: 410,
+					message: "로그인에 실패 하였습니다.",
+				});
+			}
+			const { userIdx, nickname } = rows[0];
+			const token = jwt.sign(
+				{
+					userIdx: userIdx,
+					nickname: nickname,
+				},
+				secret.jwtsecret
+			);
+			return res.send({
+				result: { jwt: token },
+				isSuccess: true,
+				code: 200, // 요청 실패시 400번대 코드
+				message: "로그인 성공",
+			});
+		} catch (err) {
+			logger.error(`createJwt Query error\n: ${JSON.stringify(err)}`);
+			return false;
+		} finally {
+			connection.release();
+		}
+	} catch (err) {
+		logger.error(`createJwt DB Connection error\n: ${JSON.stringify(err)}`);
+		return false;
+	}
+};
+
 exports.createUsers = async function (req, res) {
 	const { userID, password, nickname } = req.body;
 
@@ -31,7 +91,7 @@ exports.createUsers = async function (req, res) {
 	if (!nicknameRegExp.test(nickname)) {
 		return res.send({
 			isSuccess: false,
-			code: 400,
+			code: 410,
 			message: "닉네임 형식이 올바르지 않습니다. 한글, 숫자 또는 영문 2~10",
 		});
 	}
@@ -40,6 +100,25 @@ exports.createUsers = async function (req, res) {
 		const connection = await pool.getConnection(async (conn) => conn);
 		try {
 			//아이디 중복 검사 만들어야함
+			const checkDuplicate = await indexDao.checkDuplicate(
+				connection,
+				userID,
+				nickname
+			);
+			if (checkDuplicate === 400) {
+				return res.send({
+					isSuccess: false,
+					code: 400,
+					message: "중복되는 아이디 입니다.",
+				});
+			}
+			if (checkDuplicate === 410) {
+				return res.send({
+					isSuccess: false,
+					code: 400,
+					message: "중복되는 닉네임 입니다.",
+				});
+			}
 
 			const [rows] = await indexDao.insertUsers(
 				connection,
@@ -48,7 +127,6 @@ exports.createUsers = async function (req, res) {
 				nickname
 			);
 			const userIdx = rows.insertId;
-
 			const token = jwt.sign(
 				{
 					userIdx: userIdx,
@@ -58,6 +136,7 @@ exports.createUsers = async function (req, res) {
 			);
 
 			return res.send({
+				result: { jwt: token },
 				isSuccess: true,
 				code: 200,
 				message: "회원가입 성공",
@@ -127,7 +206,7 @@ exports.readRestaurants = async function (req, res) {
 // 	try {
 // 		const connection = await pool.getConnection(async (conn) => conn);
 // 		try {
-// 			const rows = await indexDao.isVaildIdx(connection, idx);
+// 			const isVaildIdx = await indexDao.isVaildIdx(connection, idx);
 
 // 			if (!isVaildIdx) {
 // 				return res.send({

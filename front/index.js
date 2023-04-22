@@ -22,15 +22,15 @@ floatingObject(".img_4", 1.5, 20);
 
 //이미지 변경
 const images = [
-	"./home_img/chicken.png",
-	"./home_img/steak.png",
-	"./home_img/cafe.png",
-	"./home_img/salmon.png",
-	"./home_img/Hamburger.png",
-	"./home_img/pizza.png",
-	"./home_img/noodle.png",
-	"./home_img/noodle2.png",
-	"./home_img/porkcutlet.png",
+	"./index_img/chicken.png",
+	"./index_img/steak.png",
+	"./index_img/cafe.png",
+	"./index_img/salmon.png",
+	"./index_img/Hamburger.png",
+	"./index_img/pizza.png",
+	"./index_img/noodle.png",
+	"./index_img/noodle2.png",
+	"./index_img/porkcutlet.png",
 ];
 
 function shuffleArray(array) {
@@ -109,7 +109,7 @@ textContainer.addEventListener("mouseout", function () {
 	});
 });
 textContainer.addEventListener("click", function () {
-	window.location.href = "./restaurant_map/restaurant.html";
+	window.location.href = "./signin/signin.html";
 });
 
 gsap.from("#barista", { x: 1000, y: 1000, opacity: 0, duration: 5 });
