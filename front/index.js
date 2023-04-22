@@ -109,7 +109,7 @@ textContainer.addEventListener("mouseout", function () {
 	});
 });
 textContainer.addEventListener("click", function () {
-	window.location.href = "./signin/signin.html";
+	window.location.href = "./sign/signin.html";
 });
 
 gsap.from("#barista", { x: 1000, y: 1000, opacity: 0, duration: 5 });
