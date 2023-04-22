@@ -1,4 +1,4 @@
-let url = "http://127.0.0.1:3000";
+let url = "http://3.35.16.77:3000";
 
 const btnSubmit = document.querySelector("#signup");
 
