@@ -1,0 +1,33 @@
+#dupBtn {
+	/* text-align: center; */
+	/* margin-bottom: 10px; */
+
+	/* border-radius: 10px; */
+	/* background-color: #4aa8d8; */
+	/* color: white; */
+	/* font-family: TAEBAEKmilkyway; */
+	/* width: 20%; */
+	/* height: 30px; */
+}
+
+#dupMsg {
+	color: red;
+	font-size: 15px;
+}
+
+.dupcontainer {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+#passwordConfirm {
+	margin-bottom: 0;
+}
+#passwordMsg {
+	margin-bottom: 15px;
+	margin-left: 5px;
+	text-align: start;
+	font-size: 15px;
+}

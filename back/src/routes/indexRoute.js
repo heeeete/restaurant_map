@@ -10,4 +10,6 @@ module.exports = function (app) {
 	app.post("/sign-in", index.createJwt);
 	//로그인 유지, 토큰 검증
 	app.get("/jwt", jwtMiddleware, index.readJwt);
+	//아이디 중복체크
+	app.post("/userID", index.checkDuplicate);
 };

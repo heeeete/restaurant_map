@@ -6,6 +6,39 @@ const secret = require("../../config/secret");
 const indexDao = require("../dao/indexDao");
 const { add } = require("winston");
 
+exports.checkDuplicate = async function (req, res) {
+	const { userID } = req.body;
+
+	try {
+		const connection = await pool.getConnection(async (conn) => conn);
+		try {
+			const checkDuplicate = await indexDao.checkDuplicate(connection, userID);
+			if (checkDuplicate === 400) {
+				return res.send({
+					isSuccess: false,
+					code: 400,
+					message: "중복되는 아이디 입니다.",
+				});
+			}
+			return res.send({
+				isSuccess: true,
+				code: 200,
+				message: "중복없음",
+			});
+		} catch (err) {
+			logger.error(`checkDuplicate Query error\n: ${JSON.stringify(err)}`);
+			return false;
+		} finally {
+			connection.release();
+		}
+	} catch (err) {
+		logger.error(
+			`checkDuplicate DB Connection error\n: ${JSON.stringify(err)}`
+		);
+		return false;
+	}
+};
+
 //로그인 유지
 exports.readJwt = async function (req, res) {
 	const { userIdx, nickname } = req.verifiedToken;
@@ -115,7 +148,7 @@ exports.createUsers = async function (req, res) {
 			if (checkDuplicate === 410) {
 				return res.send({
 					isSuccess: false,
-					code: 400,
+					code: 410,
 					message: "중복되는 닉네임 입니다.",
 				});
 			}

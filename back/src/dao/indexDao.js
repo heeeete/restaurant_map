@@ -17,8 +17,10 @@ exports.checkDuplicate = async function (connection, userID, nickname) {
 
 	const [IDrows] = await connection.query(IDQuery, params);
 	if (IDrows.length >= 1) return 400;
-	const [nicknamerows] = await connection.query(nicknameQuery, params);
-	if (nicknamerows.length >= 1) return 410;
+	if (nickname) {
+		const [nicknamerows] = await connection.query(nicknameQuery, params);
+		if (nicknamerows.length >= 1) return 410;
+	}
 	return true;
 };
 

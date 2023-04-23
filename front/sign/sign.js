@@ -1,3 +1,4 @@
+// label 움직임 추가
 document.addEventListener("DOMContentLoaded", function () {
 	const inputs = document.querySelectorAll(
 		".sign-form input:not([type='button'])"

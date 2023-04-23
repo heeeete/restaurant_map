@@ -22,9 +22,6 @@ html {
 	left: 50%;
 	/* 개체의 너비, 높이에 대한 비율 */
 	transform: translate(-50%, -50%);
-	/* display: flex; */
-	/* align-items: center; */
-	/* justify-content: center; */
 	text-align: center;
 	box-shadow: 5px 5px 5px 5px gray;
 	border: 1px solid rgb(0, 0, 0);
@@ -35,19 +32,14 @@ html {
 }
 
 .sign-form {
-	width: 80%;
+	width: 100%;
 	font-size: 1.5rem;
 	max-width: 20rem;
 	margin: 2rem auto;
-	display: flex;
-	right: 10px;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	position: relative;
 }
 
-.sign-form input {
+.sign-form input[type="text"],
+input[type="password"] {
 	width: 100%;
 	height: 50px;
 	font-size: 1rem;
@@ -58,14 +50,12 @@ html {
 	padding-left: 1rem;
 }
 
-#signin,
-input#signup {
-	padding-left: 0;
+#Signup,
+#signin {
 	background: #4aa8d8;
 	border: none;
+	border-radius: 5px;
 	color: white;
-	cursor: pointer;
-	font-family: inherit;
 }
 
 #signin:hover,
@@ -91,6 +81,9 @@ a {
 }
 
 .input-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 	position: relative;
 	width: 100%;
 	margin-bottom: 1rem;
@@ -113,5 +106,5 @@ a {
 }
 
 .float-label.active {
-	transform: translateY(-40%) scale(0.75);
+	transform: translateY(-42%) scale(0.75);
 }

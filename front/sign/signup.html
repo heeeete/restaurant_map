@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="sign.css" />
-		<!-- <link rel="stylesheet" href="signup.css" /> -->
+		<link rel="stylesheet" href="signup.css" />
 	</head>
 	<body>
 		<nav>
@@ -22,25 +22,31 @@
 				<div class="sign-container">
 					<h3>Register With Us</h3>
 					<div class="sign-form">
-						<div class="input-wrapper">
+						<div class="input-wrapper" style="margin-bottom: 0">
 							<label for="userID" class="float-label">ID</label>
 							<input type="text" placeholder="" id="userID" />
+							<!-- </div> -->
+						</div>
+						<div class="dupcontainer">
+							<input type="button" value="중복체크" id="dupBtn" />
+							<span id="dupMsg"></span>
 						</div>
 						<div class="input-wrapper">
 							<label for="password" class="float-label">Enter password</label>
 							<input type="password" placeholder="" id="password" />
 						</div>
-						<div class="input-wrapper">
-							<label for="password2" class="float-label"
+						<div class="input-wrapper" id="password-wrapper">
+							<label for="passwordConfirm" class="float-label"
 								>Enter password check</label
 							>
-							<input type="password" placeholder="" id="password2" />
+							<input type="password" placeholder="" id="passwordConfirm" />
 						</div>
+						<div id="passwordMsg"></div>
 						<div class="input-wrapper">
 							<label for="nickname" class="float-label">nickname</label>
 							<input type="text" placeholder="" id="nickname" />
 						</div>
-						<input type="button" value="Submit" id="signup" />
+						<input type="button" value="Submit" id="Signup" />
 						<!-- signup-container -->
 					</div>
 					<!-- sign-form -->

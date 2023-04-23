@@ -1,4 +1,5 @@
-let url = "http://3.35.16.77:3000";
+// let url = "http://3.35.16.77:3000";
+let url = "http://127.0.0.1:3000";
 
 const jwt = localStorage.getItem("x-access-token");
 setHeader(jwt);
@@ -18,7 +19,6 @@ async function setHeader(jwt) {
 		data: {}, // packet body
 	});
 
-	console.log(jwtReturn);
 	const isValidJwt = jwtReturn.data.code == 200;
 
 	if (!isValidJwt) {
