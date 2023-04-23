@@ -52,16 +52,22 @@ async function signup(event) {
 	const nicknameRegExp = /^[가-힣|a-z|A-Z|0-9|]{2,10}$/;
 
 	if (password !== passwordConfirmInput) {
-		return alert("비밀번호가 일치하지 않습니다.");
+		return deleteBoard("error", "비밀번호가 일치하지 않습니다.");
 	}
 	if (!userIDRegExp.test(userID)) {
-		return alert("아이디 형식: 영문자로 시작하는 영문자 또는 숫자 6-20");
+		return deleteBoard(
+			"error",
+			"아이디 형식: 영문자로 시작하는 영문자 또는 숫자 6-20"
+		);
 	}
 	if (!passwordRegExp.test(password)) {
-		return alert("비밀번호 형식: 8-16 숫자 특수문자 영문자 조합");
+		return deleteBoard(
+			"error",
+			"비밀번호 형식: 8-16 숫자 특수문자 영문자 조합"
+		);
 	}
 	if (!nicknameRegExp.test(nickname)) {
-		return alert("닉네임 형식 2-10 한글, 숫자 또는 영문");
+		return deleteBoard("error", "닉네임 형식 2-10 한글, 숫자 또는 영문");
 	}
 
 	const signUpReturn = await axios({
@@ -73,13 +79,16 @@ async function signup(event) {
 
 	const isValidSignUp = signUpReturn.data.code == 200;
 
-	if (!isValidSignUp) return alert("요청에 문제가 생겼습니다.");
+	if (!isValidSignUp) return deleteBoard("error", "요청에 문제가 생겼습니다.");
 
 	const jwt = signUpReturn.data.result.jwt;
 	localStorage.setItem("x-access-token", jwt);
-	alert(signUpReturn.data.message);
-
-	return location.replace("./signin.html");
+	Swal.fire({
+		icon: "success",
+		title: "회원가입 성공!",
+	}).then(() => {
+		return location.replace("./signin.html");
+	});
 }
 
 // password 일치 확인
