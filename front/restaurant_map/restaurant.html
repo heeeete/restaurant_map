@@ -13,7 +13,19 @@
 			<div class="inner">
 				<div class="nav-container">
 					<h1 class="nav-title">맛집지도</h1>
-					<button class="nav-contect">Contect</button>
+					<div class="sign-container">
+						<!-- 회원 -->
+						<div class="signed hidden">
+							<div class="dropdown">
+								<div class="dropdown-button">
+									안녕하세요. <span class="nickname"></span>님.
+								</div>
+								<div class="dropdown-content">
+									<button id="sign-out">로그아웃</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</nav>
@@ -37,7 +49,7 @@
 					</div>
 				</div>
 			</section>
-			<div id="map" class="inner" style="width: 50%; height: 700px;">
+			<div id="map" class="inner" style="width: 50%; height: 700px">
 				<!-- NAVER MAP API-->
 			</div>
 		</main>
@@ -56,6 +68,6 @@
 			referrerpolicy="no-referrer"
 		></script>
 		<script src="axios-NaverMap.js"></script>
-		<!-- <script src="NaverMap.js"></script> -->
+		<script src="restaurant.js"></script>
 	</body>
 </html>
