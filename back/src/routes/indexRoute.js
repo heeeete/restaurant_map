@@ -12,4 +12,6 @@ module.exports = function (app) {
 	app.get("/jwt", jwtMiddleware, index.readJwt);
 	//아이디 중복체크
 	app.post("/userID", index.checkDuplicate);
+	//식당 추가
+	app.post("/add-restaurants", index.addRestaurants);
 };

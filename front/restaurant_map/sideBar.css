@@ -1,0 +1,55 @@
+a.top-button {
+	color: black;
+}
+
+.top-button {
+	display: flex;
+	align-items: center;
+}
+
+.menu-img {
+	width: 70px;
+}
+.sub-menu {
+	width: 0;
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	transition: 0.5s;
+}
+.sub-menu ul {
+	list-style: none;
+	padding: 0;
+}
+
+.sub-menu {
+	overflow: hidden;
+	transition-duration: 0.5s;
+	background: rgb(222, 244, 255);
+	width: 0;
+	height: 100%;
+}
+
+.sideBar:hover > .sub-menu {
+	overflow: hidden;
+	width: 200px;
+	height: 100%;
+}
+
+.sub-menu-list li:hover {
+	background-color: white;
+}
+.sub-menu-list li {
+	line-height: 5rem;
+}
+
+.sideBar {
+	width: 70px;
+	font-size: 30px;
+	position: fixed;
+}
+
+.title {
+	text-decoration: none;
+	color: black;
+}

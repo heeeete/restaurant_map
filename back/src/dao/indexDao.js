@@ -1,6 +1,25 @@
 const { add } = require("winston");
 const { pool } = require("../../config/database");
 
+exports.createRestaurants = async function (
+	connection,
+	title,
+	address,
+	url,
+	city
+) {
+	console.log(address);
+	console.log(title);
+	console.log(city);
+	console.log(url);
+	const Query = `insert into Restaurants (title , address, url, city) values (?, ?, ?, ?);`;
+	const Params = [title, address, url, city];
+
+	const rows = await connection.query(Query, Params);
+
+	return rows;
+};
+
 exports.insertUsers = async function (connection, userID, password, nickname) {
 	const Query = `insert into Users (nickname, userID, password) values (?, ?, ?);`;
 	const Params = [nickname, userID, password];

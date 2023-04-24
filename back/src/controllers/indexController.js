@@ -6,6 +6,40 @@ const secret = require("../../config/secret");
 const indexDao = require("../dao/indexDao");
 const { add } = require("winston");
 
+exports.addRestaurants = async function (req, res) {
+	const { title, address, url, city } = req.body;
+	console.log(req.body);
+
+	try {
+		const connection = await pool.getConnection(async (conn) => conn);
+		try {
+			const [rows] = await indexDao.createRestaurants(
+				connection,
+				title,
+				address,
+				url,
+				city
+			);
+
+			return res.send({
+				isSuccess: true,
+				code: 200, // 요청 실패시 400번대 코드
+				message: "식당 추가 성공",
+			});
+		} catch (err) {
+			logger.error(`addRestaurants Query error\n: ${JSON.stringify(err)}`);
+			return false;
+		} finally {
+			connection.release();
+		}
+	} catch (err) {
+		logger.error(
+			`addRestaurants DB Connection error\n: ${JSON.stringify(err)}`
+		);
+		return false;
+	}
+};
+
 exports.checkDuplicate = async function (req, res) {
 	const { userID } = req.body;
 

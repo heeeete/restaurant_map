@@ -7,8 +7,32 @@
 		<title>Document</title>
 		<link rel="stylesheet" href="restaurant.css" />
 		<link rel="stylesheet" href="infowindows.css" />
+		<link rel="stylesheet" href="sideBar.css" />
 	</head>
 	<body>
+		<div class="sideBar">
+			<!-- 사이드바 생성 -->
+			<!-- <a href="#" class="top-button"> -->
+			<img src="./img/pngwing.com.png" alt="" class="menu-img" />
+			<!-- </a> -->
+			<!-- 서브메뉴 생성 -->
+			<div class="sub-menu">
+				<ul class="sub-menu-list">
+					<li>
+						<a href="#"><span class="title" id="add">맛집 추가하기</span></a>
+					</li>
+					<li>
+						<a href="#"><span class="title"></span></a>
+					</li>
+					<li>
+						<a href="#"><span class="title">Best Item</span></a>
+					</li>
+					<li>
+						<a href="#"><span class="title">SALE</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
 		<nav>
 			<div class="inner">
 				<div class="nav-container">
@@ -67,7 +91,9 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 		<script src="axios-NaverMap.js"></script>
 		<script src="restaurant.js"></script>
+		<script src="sideBar.js"></script>
 	</body>
 </html>
