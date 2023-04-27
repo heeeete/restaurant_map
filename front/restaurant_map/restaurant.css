@@ -42,6 +42,13 @@ body {
 	height: 3rem;
 }
 
+.city_buttons:hover {
+	background-color: rgb(255, 232, 149);
+	border-radius: 15px;
+}
+.city_buttons:active {
+	background-color: white;
+}
 .inner {
 	padding: 0 10rem;
 }
@@ -77,18 +84,6 @@ body {
 	align-items: center;
 }
 
-button.nav-contect {
-	background-color: transparent;
-	width: 100px;
-	height: 40px;
-	border: 0;
-	cursor: pointer;
-	font-family: BMJUA, fantasy;
-	font-size: 25px;
-	border: 2px solid rgb(255, 232, 149);
-	block-size: 50px;
-	border-radius: 10px;
-}
 
 .list_buttons {
 	display: flex;
@@ -102,9 +97,13 @@ button.nav-contect {
 /* 회원용/비회원용 헤더 설정 */
 .dropdown {
 	position: relative;
+	border: 2px solid rgb(255, 232, 149);
+	border-radius: 20px;
+	padding: 1rem;
 }
 
 .dropdown-button {
+	position: relative;
 	font-family: inherit;
 	font-size: 1rem;
 	border: none;
