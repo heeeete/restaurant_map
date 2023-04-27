@@ -43,7 +43,7 @@ body {
 }
 
 .city_buttons:hover {
-	background-color: rgb(255, 232, 149);
+	background-color: rgba(255, 232, 149, 0.4);
 	border-radius: 15px;
 }
 .city_buttons:active {

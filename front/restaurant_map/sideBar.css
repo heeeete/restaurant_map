@@ -54,3 +54,7 @@ a.top-button {
 	white-space: nowrap;
 	color: black;
 }
+
+li {
+	text-align: center;
+}
