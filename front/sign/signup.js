@@ -46,30 +46,6 @@ async function signup(event) {
 	const passwordConfirmInput = document.querySelector("#passwordConfirm").value;
 	const nickname = document.querySelector("#nickname").value;
 
-	const userIDRegExp = /^[a-z]+[a-z0-9]{5,19}$/;
-	const passwordRegExp =
-		/(?=.*\d{1,50})(?=.*[~`!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,50}$/;
-	const nicknameRegExp = /^[가-힣|a-z|A-Z|0-9|]{2,10}$/;
-
-	if (password !== passwordConfirmInput) {
-		return deleteBoard("error", "비밀번호가 일치하지 않습니다.");
-	}
-	if (!userIDRegExp.test(userID)) {
-		return deleteBoard(
-			"error",
-			"아이디 형식: 영문자로 시작하는 영문자 또는 숫자 6-20"
-		);
-	}
-	if (!passwordRegExp.test(password)) {
-		return deleteBoard(
-			"error",
-			"비밀번호 형식: 8-16 숫자 특수문자 영문자 조합"
-		);
-	}
-	if (!nicknameRegExp.test(nickname)) {
-		return deleteBoard("error", "닉네임 형식 2-10 한글, 숫자 또는 영문");
-	}
-
 	const signUpReturn = await axios({
 		method: "post", // http method
 		url: url + "/sign-up",
@@ -79,7 +55,7 @@ async function signup(event) {
 
 	const isValidSignUp = signUpReturn.data.code == 200;
 
-	if (!isValidSignUp) return deleteBoard("error", "요청에 문제가 생겼습니다.");
+	if (!isValidSignUp) return deleteBoard("error", signUpReturn.data.message);
 
 	const jwt = signUpReturn.data.result.jwt;
 	localStorage.setItem("x-access-token", jwt);

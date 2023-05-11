@@ -159,7 +159,7 @@ exports.createUsers = async function (req, res) {
 	if (!nicknameRegExp.test(nickname)) {
 		return res.send({
 			isSuccess: false,
-			code: 410,
+			code: 400,
 			message: "닉네임 형식이 올바르지 않습니다. 한글, 숫자 또는 영문 2~10",
 		});
 	}
